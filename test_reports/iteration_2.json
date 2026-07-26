@@ -1,0 +1,24 @@
+{
+  "summary": "Full re-test after WIV pivot to volunteer-catalogue site. Backend: 16/16 pytest cases pass (config, countries, projects, courses, registrations, Stripe checkout, PayPal 503). Frontend: all critical flows pass — hero + 9 pills, search 'Sén' → /pays/senegal, Cameroun pill → 3 project cards, project detail with correct mailto (widadinternationalvolunteers@gmail.com) and wa.me/237677958119 hrefs, 2-step registration (empty→toast, underage→toast, unchecked confirm→blocked, valid→advances to payment step), Stripe redirect to checkout.stripe.com verified, PayPal disabled button present, courses flow (/cours → /cours/pays/mali → /cours/detail/mali-bambara-bamako with Programme détaillé + register), footer shows email/WhatsApp/Cameroun/2026/8 country links.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {"ui_bugs": [], "integration_issues": [], "design_issues": []},
+  "test_report_links": [
+    "/app/backend/tests/test_wiv_backend.py",
+    "/app/test_reports/pytest/pytest_results.xml"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "server.py is ~470 lines and mixes catalog, registrations, Stripe, PayPal, and email. Consider splitting into modules (payments_stripe.py, payments_paypal.py, catalog.py, emails.py) if it grows further.",
+    "Stripe amount is correctly server-side from catalog — no client-supplied amount is trusted (good).",
+    "server.py hardcodes fallback Stripe key 'sk_test_emergent' when STRIPE_SECRET_KEY missing; acceptable for sandbox but should log a warning on startup.",
+    "Register.jsx line 66 age_max error message references item.age_min instead of both bounds correctly (says 'réservé aux {age_min}-{age_max}') — actually OK, but validate() first checks age_min then age_max so young users always trigger the min-age branch, never the max-age one. Minor UX polish only."
+  ],
+  "updated_files": ["/app/backend/tests/test_wiv_backend.py"],
+  "success_rate": {"backend": "100% (16/16)", "frontend": "100%"},
+  "test_credentials": "None. Stripe sandbox key already configured. Test card 4242 4242 4242 4242 (redirect verified, not completed).",
+  "seed_data_creation": "Created TEST registrations (project=rehabilitation-centre-enfants-bafoussam, course=mali-bambara-bamako) and Stripe checkout session records via test API calls; negligible test data left in Mongo.",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "PayPal disabled (paypal_enabled=false → /api/paypal/create-order returns 503) and Resend disabled (email_enabled=false, email_sent=false) are intentional — do NOT flag. Payment amount is server-side from catalog_data.py (project 320 EUR / course 210 EUR). Registration is 2-step: form (step 1) → payment (step 2) at /inscription/:kind/:slug. Backend tests live at /app/backend/tests/test_wiv_backend.py.",
+  "rca of the issue": "N/A — no bugs found."
+}

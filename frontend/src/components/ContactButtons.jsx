@@ -1,35 +1,31 @@
 import React from "react";
 import { Mail, MessageCircle } from "lucide-react";
-import { mailtoLink, whatsappLink } from "@/lib/contact";
-import { useLang } from "@/i18n/LanguageContext";
+import { mailtoRecall, whatsappInterest } from "@/lib/contact";
 
 /**
- * The mandatory pair of contact buttons repeated under every program/project.
- * `program` is the plain-language name injected into the mailto/WhatsApp text.
+ * The two secondary action buttons shown on a project/course detail page:
+ * "Demander un rappel par e-mail" (mailto) and "Discuter sur WhatsApp" (wa.me).
  */
-export default function ContactButtons({ program, testPrefix = "contact", compact = false }) {
-  const { t, lang } = useLang();
-  const pad = compact ? "px-5 py-3 text-sm" : "px-6 py-4";
-
+export default function ContactButtons({ title, testPrefix = "detail" }) {
   return (
-    <div className="flex flex-col sm:flex-row gap-3 w-full">
+    <div className="grid sm:grid-cols-2 gap-3 w-full">
       <a
-        href={mailtoLink(program, lang)}
+        href={mailtoRecall(title)}
         data-testid={`${testPrefix}-email-btn`}
-        className={`flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-white text-ink border border-gray-200 hover:border-brand hover:text-brand font-medium transition-colors ${pad}`}
+        className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-ink border-2 border-ink/10 hover:border-brand hover:text-brand font-semibold px-6 py-3.5 transition-colors"
       >
-        <Mail className="w-4 h-4" strokeWidth={2.2} aria-hidden="true" />
-        <span>{t.contactButtons.email}</span>
+        <Mail className="w-5 h-5" strokeWidth={2.2} />
+        Demander un rappel par e-mail
       </a>
       <a
-        href={whatsappLink(program, lang)}
+        href={whatsappInterest(title)}
         target="_blank"
         rel="noopener noreferrer"
         data-testid={`${testPrefix}-whatsapp-btn`}
-        className={`flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-wa hover:bg-wa-dark text-white font-medium transition-colors ${pad}`}
+        className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] hover:bg-[#1DA851] text-white font-semibold px-6 py-3.5 transition-colors"
       >
-        <MessageCircle className="w-4 h-4" strokeWidth={2.2} aria-hidden="true" />
-        <span>{t.contactButtons.whatsapp}</span>
+        <MessageCircle className="w-5 h-5" strokeWidth={2.2} />
+        Discuter sur WhatsApp
       </a>
     </div>
   );

@@ -1,70 +1,60 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Mail, MessageCircle, MapPin } from "lucide-react";
-import { useLang } from "@/i18n/LanguageContext";
-import { NGO_EMAIL, WHATSAPP_NUMBER, LOCATION, whatsappLink } from "@/lib/contact";
+import { NGO_EMAIL, WHATSAPP_DISPLAY, LOCATION, mailtoGeneric, whatsappGeneric } from "@/lib/contact";
+
+const COUNTRIES = [
+  ["cameroun", "Cameroun"], ["mali", "Mali"], ["nigeria", "Nigeria"], ["senegal", "Sénégal"],
+  ["maroc", "Maroc"], ["benin", "Bénin"], ["burkina-faso", "Burkina Faso"], ["niger", "Niger"],
+];
 
 export default function Footer() {
-  const { t } = useLang();
   const year = new Date().getFullYear();
-
   return (
     <footer className="relative z-10 bg-ink text-white" data-testid="site-footer">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 grid gap-12 md:grid-cols-4">
-        <div className="md:col-span-2 max-w-sm">
-          <div className="flex items-center gap-3">
-            <span className="grid place-items-center w-11 h-11 rounded-xl bg-brand font-display font-semibold text-lg">
-              WIV
-            </span>
-            <span className="font-display text-lg leading-tight">
-              Widad International
-              <br /> Volunteers
-            </span>
+        <div className="md:col-span-1">
+          <div className="flex items-center gap-2.5">
+            <span className="grid place-items-center w-11 h-11 rounded-2xl bg-brand font-display font-extrabold text-lg">W</span>
+            <span className="font-display font-bold leading-tight">Widad<span className="text-brand">.</span></span>
           </div>
-          <p className="mt-6 text-white/60 text-base leading-relaxed">{t.footer.tagline}</p>
+          <p className="mt-5 text-white/60 leading-relaxed text-sm">
+            Volontariat, entrepreneuriat solidaire et cours de langues locales à travers l'Afrique.
+          </p>
         </div>
 
         <div>
-          <h4 className="font-display text-sm uppercase tracking-widest text-white/40 mb-4">
-            {t.footer.quickLinks}
-          </h4>
-          <ul className="space-y-3 text-white/75">
-            <li><Link to="/" className="hover:text-brand transition-colors" data-testid="footer-link-home">{t.nav.home}</Link></li>
-            <li><Link to="/#programs" className="hover:text-brand transition-colors" data-testid="footer-link-programs">{t.nav.programs}</Link></li>
-            <li><Link to="/don" className="hover:text-brand transition-colors" data-testid="footer-link-donate">{t.nav.donate}</Link></li>
-            <li><Link to="/contact" className="hover:text-brand transition-colors" data-testid="footer-link-contact">{t.nav.contact}</Link></li>
+          <h4 className="font-display font-bold text-sm uppercase tracking-wider text-white/40 mb-4">Projets par pays</h4>
+          <ul className="grid grid-cols-2 gap-2 text-white/75 text-sm">
+            {COUNTRIES.map(([slug, name]) => (
+              <li key={slug}><Link to={`/pays/${slug}`} className="hover:text-brand transition-colors" data-testid={`footer-country-${slug}`}>{name}</Link></li>
+            ))}
           </ul>
         </div>
 
         <div>
-          <h4 className="font-display text-sm uppercase tracking-widest text-white/40 mb-4">
-            {t.footer.contactTitle}
-          </h4>
-          <ul className="space-y-3 text-white/75">
-            <li>
-              <a href={`mailto:${NGO_EMAIL}`} className="flex items-center gap-2 hover:text-brand transition-colors break-all" data-testid="footer-email">
-                <Mail className="w-4 h-4 shrink-0" /> {NGO_EMAIL}
-              </a>
-            </li>
-            <li>
-              <a href={whatsappLink("WIV")} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-wa transition-colors" data-testid="footer-whatsapp">
-                <MessageCircle className="w-4 h-4 shrink-0" /> +237 677 958 119
-              </a>
-            </li>
-            <li className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 shrink-0" /> {LOCATION}
-            </li>
+          <h4 className="font-display font-bold text-sm uppercase tracking-wider text-white/40 mb-4">Navigation</h4>
+          <ul className="space-y-2.5 text-white/75 text-sm">
+            <li><Link to="/" className="hover:text-brand transition-colors">Accueil</Link></li>
+            <li><Link to="/cours" className="hover:text-brand transition-colors" data-testid="footer-courses">Cours de langue</Link></li>
+            <li><a href={mailtoGeneric()} className="hover:text-brand transition-colors">Nous contacter</a></li>
+            <li><span className="text-white/40">Mentions légales</span></li>
+            <li><span className="text-white/40">Politique de confidentialité</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="font-display font-bold text-sm uppercase tracking-wider text-white/40 mb-4">Contact</h4>
+          <ul className="space-y-3 text-white/75 text-sm">
+            <li><a href={mailtoGeneric()} className="flex items-center gap-2 hover:text-brand transition-colors break-all" data-testid="footer-email"><Mail className="w-4 h-4 shrink-0" /> {NGO_EMAIL}</a></li>
+            <li><a href={whatsappGeneric()} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-[#25D366] transition-colors" data-testid="footer-whatsapp"><MessageCircle className="w-4 h-4 shrink-0" /> {WHATSAPP_DISPLAY}</a></li>
+            <li className="flex items-center gap-2"><MapPin className="w-4 h-4 shrink-0 text-brand" /> {LOCATION}</li>
           </ul>
         </div>
       </div>
-
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-white/50">
-          <p>© {year} Widad International Volunteers. {t.footer.rights}</p>
-          <div className="flex items-center gap-6">
-            <span className="hover:text-white/80 transition-colors cursor-pointer">{t.footer.legal}</span>
-            <span className="hover:text-white/80 transition-colors cursor-pointer">{t.footer.privacy}</span>
-          </div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-5 text-sm text-white/50">
+          © {year} Widad International Volunteers. Tous droits réservés.
         </div>
       </div>
     </footer>

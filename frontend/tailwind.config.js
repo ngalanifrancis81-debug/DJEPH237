@@ -8,17 +8,18 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['"Clash Display"', 'sans-serif'],
-        sans: ['Outfit', 'sans-serif'],
+        display: ['"Baloo 2"', 'sans-serif'],
+        sans: ['Nunito', 'sans-serif'],
       },
       colors: {
         brand: {
-          DEFAULT: '#0033FF',
-          dark: '#001A80',
-          light: '#E6EBFF',
-          hover: '#0029CC',
+          DEFAULT: '#C8102E',
+          dark: '#A00D24',
+          light: '#FDE8EC',
+          hover: '#A80E27',
         },
-        ink: '#0A0F24',
+        gold: '#F5B301',
+        ink: '#0B1F3A',
         wa: {
           DEFAULT: '#25D366',
           dark: '#1DA851',

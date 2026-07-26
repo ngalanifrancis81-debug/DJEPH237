@@ -1,5 +1,4 @@
-@import url("https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -8,88 +7,71 @@
 @layer base {
     :root {
         --background: 0 0% 100%;
-        --foreground: 228 55% 9%;
+        --foreground: 214 68% 14%;
         --card: 0 0% 100%;
-        --card-foreground: 228 55% 9%;
+        --card-foreground: 214 68% 14%;
         --popover: 0 0% 100%;
-        --popover-foreground: 228 55% 9%;
-        --primary: 227 100% 50%;
+        --popover-foreground: 214 68% 14%;
+        --primary: 350 85% 42%;
         --primary-foreground: 0 0% 100%;
-        --secondary: 220 33% 97%;
-        --secondary-foreground: 228 55% 9%;
-        --muted: 220 33% 97%;
+        --secondary: 220 20% 97%;
+        --secondary-foreground: 214 68% 14%;
+        --muted: 220 20% 96%;
         --muted-foreground: 215 16% 47%;
-        --accent: 227 100% 96%;
-        --accent-foreground: 227 100% 40%;
-        --destructive: 0 84.2% 60.2%;
+        --accent: 350 90% 96%;
+        --accent-foreground: 350 85% 42%;
+        --destructive: 0 84% 60%;
         --destructive-foreground: 0 0% 98%;
-        --border: 214 32% 91%;
-        --input: 214 32% 91%;
-        --ring: 227 100% 50%;
-        --radius: 0.75rem;
+        --border: 214 20% 90%;
+        --input: 214 20% 90%;
+        --ring: 350 85% 42%;
+        --radius: 0.9rem;
     }
 }
 
 @layer base {
-    * {
-        @apply border-border;
-    }
+    * { @apply border-border; }
     body {
         @apply bg-background text-foreground;
-        font-family: "Outfit", sans-serif;
+        font-family: "Nunito", sans-serif;
         -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
         margin: 0;
     }
     h1, h2, h3, h4, .font-display {
-        font-family: "Clash Display", sans-serif;
+        font-family: "Baloo 2", sans-serif;
     }
-    ::selection {
-        background: #0033FF;
-        color: #ffffff;
-    }
+    ::selection { background: #C8102E; color: #fff; }
 }
 
-/* Lenis smooth scroll */
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-stopped { overflow: hidden; }
 
-/* Subtle digital grain to break the sterile white/blue */
-.grain::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    opacity: 0.035;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+/* Left vertical brand rail on the home hero */
+.vertical-rail {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    letter-spacing: 0.28em;
 }
 
-.glass {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+.card-shadow { box-shadow: 0 1px 2px rgba(11,31,58,.04), 0 8px 30px rgba(11,31,58,.06); }
+.hover-lift { transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease; }
+.hover-lift:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(11,31,58,.12); }
+
+.search-glow:focus-within {
+    box-shadow: 0 0 0 4px rgba(245,179,1,.35), 0 10px 30px rgba(11,31,58,.12);
+    border-color: #F5B301;
 }
 
-/* Custom selection cursor accent for interactive scale */
-.hover-lift {
-    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
-}
-.hover-lift:hover {
-    transform: translateY(-6px);
-}
-
-.marquee-track {
-    display: flex;
-    width: max-content;
-    animation: marquee 32s linear infinite;
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 @layer base {
-    [data-debug-wrapper="true"] {
-        display: contents !important;
-    }
+    [data-debug-wrapper="true"] { display: contents !important; }
     [data-debug-wrapper="true"] > * {
         margin-left: inherit; margin-right: inherit; margin-top: inherit; margin-bottom: inherit;
         padding-left: inherit; padding-right: inherit; padding-top: inherit; padding-bottom: inherit;
