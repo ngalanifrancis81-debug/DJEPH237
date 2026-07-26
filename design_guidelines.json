@@ -1,0 +1,138 @@
+{
+  "theme": "light",
+  "typography": {
+    "headings": {
+      "family": "Clash Display, sans-serif",
+      "weights": ["400", "500", "600"],
+      "usage": "Use tight letter spacing (tracking-tight) for massive impact. Never use for body text."
+    },
+    "body": {
+      "family": "Outfit, sans-serif",
+      "weights": ["300", "400", "500"],
+      "usage": "Clean, highly readable geometric sans for all standard text."
+    },
+    "scale": {
+      "h1": "text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tighter",
+      "h2": "text-4xl md:text-5xl leading-tight tracking-tight",
+      "h3": "text-2xl md:text-3xl leading-snug tracking-tight",
+      "body": "text-base md:text-lg text-slate-700",
+      "small": "text-sm uppercase tracking-widest text-slate-500"
+    }
+  },
+  "colors": {
+    "primary": {
+      "blue_base": "#0033FF",
+      "blue_light": "#E6EBFF",
+      "blue_dark": "#001A80",
+      "description": "High-energy Electric Blue, establishing a tech-startup feel."
+    },
+    "surface": {
+      "white": "#FFFFFF",
+      "off_white": "#F8F9FB",
+      "light_gray": "#F1F5F9"
+    },
+    "text": {
+      "main": "#0A0F24",
+      "muted": "#64748B",
+      "inverse": "#FFFFFF"
+    },
+    "accent": {
+      "whatsapp_green": "#25D366",
+      "description": "Mandatory WhatsApp green for communication buttons."
+    }
+  },
+  "visual_enhancers": {
+    "textures": "Subtle digital grain overlay (opacity 2-3%) on the main background to break the sterility of solid white/blue.",
+    "borders": "1px solid border-blue-900/10 on cards and bento grids. Use 'Crystal Glass' style strictly over photos, otherwise flat and crisp.",
+    "shapes": "Rectangular cards with minimal border radius (rounded-xl) for a 'tech' feel. Avoid excessively soft/bubbly radii.",
+    "photography": "Spotlight treatment. Real product/impact photography placed in clean clipped frames or grid cells."
+  },
+  "component_path": {
+    "navigation": "/app/frontend/src/components/Navigation.jsx",
+    "hero": "/app/frontend/src/components/Hero.jsx",
+    "manifesto": "/app/frontend/src/components/Manifesto.jsx",
+    "programs_grid": "/app/frontend/src/components/ProgramsGrid.jsx",
+    "roadmap": "/app/frontend/src/components/Roadmap.jsx",
+    "donation_page": "/app/frontend/src/pages/Donation.jsx",
+    "contact_page": "/app/frontend/src/pages/Contact.jsx",
+    "footer": "/app/frontend/src/components/Footer.jsx"
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#0033FF] text-white hover:bg-[#0029CC] px-8 py-4 rounded-full font-medium transition-all inline-flex items-center justify-center",
+      "whatsapp": "bg-[#25D366] text-white hover:bg-[#1DA851] px-6 py-4 rounded-full font-medium transition-all flex items-center gap-2",
+      "email": "bg-white text-[#0A0F24] border border-gray-200 hover:border-[#0033FF] px-6 py-4 rounded-full font-medium transition-all flex items-center gap-2",
+      "donation_chip": "border border-blue-200 bg-white hover:border-[#0033FF] hover:bg-blue-50 text-[#0033FF] px-6 py-3 rounded-xl font-medium transition-colors"
+    },
+    "cards": {
+      "bento": "bg-white border border-gray-100 rounded-2xl p-8 hover:shadow-lg transition-shadow relative overflow-hidden"
+    },
+    "navigation": {
+      "style": "Sticky glassmorphism header (backdrop-blur-xl bg-white/80 border-b border-gray-200/50). Include Logo, main links, a top-right dropdown for 'Nous contacter' (Email/WhatsApp), and a language switcher FR/EN."
+    }
+  },
+  "grids": {
+    "bento_grid": "Use CSS grid with varying col-spans. For 'Nos 3 Espaces Clés', use a 12-column grid where cards span 12, 6, or 4 columns based on breakpoint to create an asymmetric, dynamic feel."
+  },
+  "layouts": {
+    "spacing": "Generous vertical rhythm. Use py-24 or py-32 between main sections.",
+    "manifesto": "3-pillar layout with staggered elements. Each pillar features a massive numbered background chapter (01, 02, 03) with text-8xl text-blue-600/5."
+  },
+  "motion": {
+    "scrolling": "Implement smooth scrolling using @studio-freight/lenis wrapped at the app root level.",
+    "hero_reveal": "Kinetic line-by-line text reveal for the H1 using framer-motion (initial y: 100%, animate to y: 0 inside an overflow-hidden wrapper).",
+    "marquee": "Use react-fast-marquee for a slow editorial ribbon displaying key values/words across the screen.",
+    "parallax": "Subtle parallax on hero images or background elements (framer-motion useScroll)."
+  },
+  "accessibility": {
+    "contrast": "Ensure all text, especially white text on blue or blue on white, meets APCA/WCAG standards.",
+    "testing": "All interactive elements (buttons, links, form inputs) MUST include a 'data-testid' attribute (e.g., data-testid='whatsapp-contact-button')."
+  },
+  "image_urls": [
+    {
+      "url": "https://images.unsplash.com/photo-1528901166007-3784c7dd3653",
+      "description": "Man using laptop in modern tech context.",
+      "category": "hero_or_makerspace"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1734254807102-fbf62b0cc513",
+      "description": "Green startup / Agricultural innovation.",
+      "category": "incubator"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1620464225966-8482645f2db1",
+      "description": "Cultural youth event.",
+      "category": "culture_coliving"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1694175271713-a6e2cc378980",
+      "description": "A man with a laptop, tech startup vibe.",
+      "category": "tech_innovation"
+    }
+  ],
+  "3d_libraries": {
+    "usage": "Use framer-motion for smooth UI transitions and 2.5D parallax. Heavy 3D libraries (Three.js) are not required here to keep the startup feel lightning-fast, rely on crisp CSS and framer-motion instead."
+  },
+  "instructions_to_main_agent": [
+    "Build the application using React and Tailwind CSS in JavaScript (.js/.jsx files). DO NOT USE TypeScript.",
+    "Install and setup @studio-freight/lenis for smooth scrolling at the app root level.",
+    "Implement the 'Nos 3 Espaces Clés' section as a high-density bento grid. Under EVERY program block, you MUST place two side-by-side contact buttons: 'Discuter par Email' and 'Discuter par WhatsApp' (Green #25D366).",
+    "The Hero section must feature the exact French slogan 'Co-créer le futur : quand l'exil devient une force d'innovation durable.' with a line-by-line framer-motion reveal.",
+    "Include a 'Feuille de route — Première année' section as a vertical winding timeline showing Months 1-3, 4-6, and 7-12.",
+    "Create a dedicated 'Faire un don' component with amount selectors (10/25/50/100 EUR).",
+    "Ensure the 'Notre Esprit' section uses a 3-pillar layout with massive numbered chapters (01, 02, 03) styled gracefully in the background.",
+    "Add a language switcher (FR/EN) in the navigation.",
+    "Use lucide-react for icons.",
+    "Build the Contact page with a classic form + Email/WhatsApp direct buttons."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "Do not use generic centered layouts or simplistic gradients. Create asymmetry.",
+    "Use 2-3x more spacing than feels standard (p-8, p-12, p-24).",
+    "Avoid the 'AI slop' look: ensure sharp, distinctive components rather than default generic look.",
+    "Every interaction needs micro-animations (hover states, focus).",
+    "Do not use complete transparent backgrounds for headers or overlays where text becomes unreadable.",
+    "Always use modern pill-shaped or rounded-xl buttons.",
+    "Include `data-testid` on all interactables for automated testing.",
+    "Rely exclusively on the provided image_urls for media. NEVER use placeholder services like via.placeholder.com."
+  ]
+}
