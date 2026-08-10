@@ -107,6 +107,102 @@ export default function Home() {
         </div>
       </section>
 
+      {/* BIOGRAPHY / MANIFESTO */}
+      <section id="bio" className="relative z-10 bg-white py-24 md:py-32">
+        <div className="max-w-4xl mx-auto px-6 lg:px-10">
+          <Reveal>
+            <span className="text-sm uppercase tracking-widest text-brand font-bold">Widad International Volunteers</span>
+            <h2 className="mt-4 font-display font-extrabold text-ink text-4xl md:text-5xl leading-[1.1] tracking-tight">
+              Un volontariat responsable, humain, et tourné vers l'avenir.
+            </h2>
+          </Reveal>
+
+          {[
+            {
+              n: "01",
+              t: "Une histoire du volontariat dans le monde",
+              ps: [
+                "Le volontariat organisé, tel que nous le connaissons aujourd'hui, trouve l'une de ses origines les plus marquantes au XIXᵉ siècle. En 1859, un citoyen suisse témoin des ravages d'une grande bataille européenne est bouleversé par l'absence de secours organisés pour les blessés. De ce constat naît, en 1863, la création d'un mouvement international de secours volontaire et désintéressé, fondé sur l'idée que des civils peuvent s'organiser librement pour venir en aide à autrui, sans distinction d'origine.",
+                "À la même époque, une infirmière britannique s'illustre par son rôle pionnier dans l'organisation de soins bénévoles pendant un conflit majeur en Crimée. Son action contribue à poser les bases d'un volontariat structuré, formé et encadré, loin de l'improvisation, et inspire par la suite la formation de nombreuses volontaires à travers l'Europe.",
+                "Au XXᵉ siècle, le volontariat prend une dimension internationale et institutionnelle. En 1961, un jeune président américain lance un programme invitant des volontaires à s'engager plusieurs années à l'étranger pour appuyer des projets de développement communautaire, d'éducation et de santé. Cette initiative marque un tournant : le volontariat devient un outil reconnu de coopération entre les peuples, encouragé au plus haut niveau politique.",
+                "Depuis, le mouvement s'est amplifié et diversifié à l'échelle mondiale, porté par des organisations locales et internationales, des programmes des Nations Unies dédiés au volontariat, et des millions de citoyens convaincus qu'un engagement individuel, aussi modeste soit-il, peut contribuer à un changement collectif. C'est dans cet héritage que s'inscrit Widad International Volunteers : perpétuer cette tradition d'engagement solidaire, en l'adaptant aux réalités et aux besoins d'aujourd'hui.",
+              ],
+            },
+            {
+              n: "02",
+              t: "Notre raison d'être",
+              ps: [
+                "Widad International Volunteers est une organisation non gouvernementale dédiée au volontariat international solidaire. Née de la conviction qu'un engagement humain, lorsqu'il est bien pensé et bien accompagné, peut transformer aussi bien les territoires qui l'accueillent que les personnes qui s'y consacrent, notre organisation s'attache à créer des ponts durables entre des volontaires venus d'horizons divers et des communautés confrontées à des défis concrets du quotidien.",
+                "Nous ne concevons pas le volontariat comme un simple séjour à l'étranger, ni comme une parenthèse touristique teintée de bonnes intentions. Nous le pensons comme un véritable engagement, structuré, encadré et évalué, où chaque volontaire devient un acteur temporaire mais essentiel d'un projet plus large qui le dépasse et qui continue d'exister après son départ.",
+              ],
+            },
+            {
+              n: "03",
+              t: "Notre vision du volontariat solidaire",
+              ps: [
+                "Trop souvent, le volontariat international souffre d'un déséquilibre : des volontaires enthousiastes mais mal préparés, des projets improvisés, un impact réel difficile à mesurer, voire une forme de dépendance créée plutôt que d'autonomie transmise. Chez Widad, nous avons fait le choix inverse. Chaque mission que nous proposons répond à un besoin exprimé, documenté et validé par les acteurs locaux eux-mêmes : associations de terrain, structures communautaires, établissements éducatifs, coopératives ou centres sociaux. Ce sont eux qui définissent la nature du besoin ; nous nous assurons ensuite que les compétences, l'énergie et la motivation des volontaires viennent s'y greffer de manière cohérente, utile et respectueuse.",
+                "Cette philosophie repose sur une conviction simple : le meilleur volontariat est celui qui se rend, à terme, invisible — celui qui transmet des compétences, renforce des capacités locales, et finit par ne plus être nécessaire, parce que les communautés concernées ont gagné en autonomie.",
+              ],
+            },
+            {
+              n: "04",
+              t: "Notre méthode de travail",
+              ps: [
+                "Chaque mission proposée par Widad International Volunteers suit un processus rigoureux, de sa conception à son évaluation.",
+                "En amont, nous identifions et validons chaque projet en concertation directe avec la structure locale partenaire, afin de nous assurer que le besoin exprimé est réel, précis et durable. Nous refusons les projets construits uniquement pour « occuper » des volontaires, sans réelle utilité pour la communauté.",
+                "Pendant la mission, chaque volontaire bénéficie d'un encadrement local constant, assuré par des référents formés, présents sur place, capables de faire le lien entre les objectifs du projet, les attentes du volontaire et les réalités du terrain. Ce cadre garantit à la fois la sécurité, le bon déroulement de la mission et la qualité de l'expérience vécue.",
+                "En aval, nous assurons un suivi de l'impact des actions menées, en évaluant dans quelle mesure les objectifs fixés ont été atteints, et en ajustant, si nécessaire, nos futures collaborations avec la structure partenaire concernée.",
+              ],
+            },
+            {
+              n: "05",
+              t: "Notre engagement en matière de transparence",
+              ps: [
+                "La confiance est au cœur de notre fonctionnement, aussi bien vis-à-vis des volontaires que des communautés que nous accompagnons. Les contributions financières demandées aux volontaires, sous forme de dons de solidarité, sont intégralement affectées au financement des projets : hébergement, encadrement local, matériel, soutien direct aux structures partenaires. Aucune marge cachée, aucune ambiguïté sur l'utilisation des fonds : chaque volontaire sait précisément à quoi contribue son engagement.",
+              ],
+            },
+            {
+              n: "06",
+              t: "L'expérience humaine et culturelle",
+              ps: [
+                "Au-delà de la dimension solidaire, l'engagement chez Widad est aussi, et peut-être avant tout, une expérience humaine profonde. Vivre au sein d'une communauté, partager son quotidien, comprendre ses codes, ses traditions et ses réalités, c'est acquérir un regard neuf sur le monde et sur soi-même. Nos volontaires repartent rarement inchangés : ils reviennent avec une compréhension plus fine des enjeux de développement, une plus grande capacité d'adaptation, et souvent, une remise en question salutaire de leurs propres certitudes.",
+                "Nous croyons que cette dimension humaine et interculturelle est indissociable de l'impact solidaire : un volontaire qui comprend et respecte le contexte dans lequel il s'engage sera toujours plus utile qu'un volontaire animé des meilleures intentions mais déconnecté des réalités locales.",
+              ],
+            },
+            {
+              n: "07",
+              t: "Notre ambition",
+              ps: [
+                "À travers chacune de ses actions, Widad International Volunteers poursuit une double ambition : contribuer de manière tangible, mesurable et durable au développement des communautés que nous accompagnons, et offrir à chaque volontaire une expérience transformatrice, exigeante et profondément humaine.",
+                "Nous ne prétendons pas résoudre à nous seuls les défis auxquels sont confrontées les communautés que nous accompagnons. Mais nous croyons fermement qu'un engagement bien pensé, structuré et respectueux peut faire une réelle différence — pour ceux qui donnent de leur temps, comme pour ceux qui les accueillent.",
+              ],
+            },
+          ].map((ch, i) => (
+            <Reveal key={ch.n} delay={i * 0.03}>
+              <div className="mt-14 grid md:grid-cols-12 gap-6 md:gap-10">
+                <div className="md:col-span-3">
+                  <div className="sticky md:top-28">
+                    <div className="font-display font-extrabold text-brand text-5xl md:text-6xl leading-none">{ch.n}</div>
+                    <h3 className="mt-3 font-display font-bold text-ink text-xl md:text-2xl leading-tight">{ch.t}</h3>
+                  </div>
+                </div>
+                <div className="md:col-span-9 space-y-4">
+                  {ch.ps.map((p, j) => (
+                    <p key={j} className="text-ink/75 text-lg leading-relaxed">{p}</p>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          ))}
+
+          <Reveal delay={0.05}>
+            <p className="mt-16 pt-8 border-t border-ink/10 font-display font-bold text-brand text-xl md:text-2xl">
+              Widad International Volunteers — un volontariat responsable, humain, et tourné vers l'avenir.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       {/* HOW IT WORKS */}
       <section className="bg-white py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-6 lg:px-10">

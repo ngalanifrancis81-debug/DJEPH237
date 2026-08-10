@@ -540,4 +540,96 @@ COURSES = [
         ["3h/jour (9h-12h).", "Semaine 1 : bases linguistiques et alphabet Tifinagh.",
          "Semaine 2 : vocabulaire nomade et désertique.",
          "Semaine 3 : conversation avancée avec locuteurs touaregs."], IMG["desert_canyon"]),
+
+    # --- LANGUES SUPPLÉMENTAIRES (2 de plus par pays → 5 langues par pays) ---
+    # Cameroun
+    _co(CM, FCM, "cameroun-bassa-edea", "Bassa", "Édéa", 16, 210, "Session 3 semaines", "Français + Bassa",
+        "Le bassa, langue du peuple Bassa du Littoral camerounais, exploré à travers l'immersion en famille et la musique traditionnelle.",
+        ["3h/jour (9h-12h), lundi-vendredi.", "Semaine 1 : phonétique et salutations.",
+         "Semaine 2 : vocabulaire courant et vie familiale.",
+         "Semaine 3 : conversation et découverte des chants Bassa."], IMG["classroom"]),
+    _co(CM, FCM, "cameroun-fulfulde-ngaoundere", "Fulfulde (Peul)", "Ngaoundéré", 16, 220, "Session 4 semaines", "Français + Fulfulde",
+        "Le fulfulde du Cameroun septentrional, langue véhiculaire du grand Nord, appris auprès des communautés peules de l'Adamaoua.",
+        ["2h/jour (15h-17h).", "Semaines 1-2 : phonétique, salutations, vocabulaire pastoral.",
+         "Semaines 3-4 : conversation, expressions imagées, immersion dans une famille peule."], IMG["desert_camels"]),
+
+    # Mali
+    _co(CM_ML, FML, "mali-dogon-bandiagara", "Dogon (Dogosso)", "Bandiagara", 18, 230, "Session 3 semaines", "Français + Dogon",
+        "Le dogon, langue à cosmogonie riche parlée sur la falaise de Bandiagara, appris auprès des hogons et des sages du plateau.",
+        ["3h/jour (9h-12h).", "Semaine 1 : bases phonétiques et salutations.",
+         "Semaine 2 : vocabulaire cosmogonique et symbolique dogon.",
+         "Semaine 3 : conversation et visite guidée d'un village Dogon."], IMG["forest"]),
+    _co(CM_ML, FML, "mali-tamasheq-kidal", "Tamasheq (Touareg)", "Kidal", 18, 240, "Session 3 semaines", "Français + Tamasheq",
+        "Le tamasheq targui du Mali, langue nomade du désert, appris autour du thé et de l'alphabet Tifinagh.",
+        ["3h/jour (9h-12h).", "Semaine 1 : alphabet Tifinagh et phonétique.",
+         "Semaine 2 : vocabulaire du désert et de la caravane.",
+         "Semaine 3 : conversation avec locuteurs natifs."], IMG["desert_camels"]),
+
+    # Nigeria
+    _co(CM_NG, FNG, "nigeria-fulfulde-sokoto", "Fulfulde", "Sokoto", 18, 230, "Session 3 semaines", "Anglais + Fulfulde",
+        "Le fulfulde des Peuls du nord Nigeria, langue transfrontalière du Sahel, appris auprès des éleveurs de Sokoto.",
+        ["3h/jour (9h-12h).", "Semaine 1 : phonétique et politesse peule.",
+         "Semaine 2 : vocabulaire pastoral et transhumance.",
+         "Semaine 3 : conversation et immersion en famille peule."], IMG["classroom"]),
+    _co(CM_NG, FNG, "nigeria-efik-calabar", "Efik", "Calabar", 16, 220, "Session 3 semaines", "Anglais + Efik",
+        "L'efik, langue du sud-est nigérian et royaume historique de Calabar, appris à travers la cuisine et les proverbes.",
+        ["3h/jour (10h-13h).", "Semaine 1 : alphabet et salutations.",
+         "Semaine 2 : vocabulaire culinaire (edikang ikong) et vie quotidienne.",
+         "Semaine 3 : conversation et visite du musée de Calabar."], IMG["market_stalls"]),
+
+    # Sénégal
+    _co(CM_SN, FSN, "senegal-diola-ziguinchor", "Diola", "Ziguinchor", 16, 220, "Session 4 semaines", "Français + Diola",
+        "Le diola de Basse-Casamance, langue à multiples variantes, appris en immersion dans un village traditionnel.",
+        ["2h/jour (9h-11h).", "Semaines 1-2 : phonétique, salutations, vie villageoise.",
+         "Semaines 3-4 : conversation, initiation aux rites du bois sacré (avec accord)."], IMG["forest"]),
+    _co(CM_SN, FSN, "senegal-mandinka-kolda", "Mandinka", "Kolda", 16, 210, "Session 3 semaines", "Français + Mandinka",
+        "Le mandinka, langue mandingue partagée entre Sénégal, Gambie et Guinée, appris à travers les récits des griots.",
+        ["3h/jour (9h-12h).", "Semaine 1 : phonétique et salutations.",
+         "Semaine 2 : vocabulaire du quotidien et proverbes mandingues.",
+         "Semaine 3 : conversation et écoute des griots."], IMG["language_class"]),
+
+    # Maroc
+    _co(CM_MA, FMA, "maroc-tarifit-nador", "Tarifit (Rif)", "Nador", 18, 230, "Session 3 semaines", "Français + Tarifit",
+        "Le tarifit, variante amazighe parlée dans le Rif marocain, exploré en immersion en pays rifain.",
+        ["3h/jour (9h-12h).", "Semaine 1 : phonétique et alphabet Tifinagh.",
+         "Semaine 2 : vocabulaire de la montagne et de l'artisanat rifain.",
+         "Semaine 3 : conversation et rencontre avec des locuteurs natifs."], IMG["pottery2"]),
+    _co(CM_MA, FMA, "maroc-tachelhit-agadir", "Tachelhit (Souss)", "Agadir", 16, 230, "Session 4 semaines", "Français + Tachelhit",
+        "Le tachelhit, variante amazighe du Souss, apprise dans les villages berbères de l'Anti-Atlas et de la région d'Agadir.",
+        ["2h/jour (14h-16h).", "Semaines 1-2 : phonétique et alphabet Tifinagh.",
+         "Semaines 3-4 : conversation, vocabulaire du souk et immersion dans un village."], IMG["language_class"]),
+
+    # Bénin
+    _co(CM_BJ, FBJ, "benin-ditammari-boukoumbe", "Ditammari (Somba)", "Boukoumbé", 18, 220, "Session 3 semaines", "Français + Ditammari",
+        "Le ditammari, langue des Betamaribe (Somba), apprise dans les célèbres tata de l'Atacora.",
+        ["3h/jour (9h-12h).", "Semaine 1 : phonétique et salutations.",
+         "Semaine 2 : vocabulaire de la vie villageoise et de l'habitat tata.",
+         "Semaine 3 : conversation et immersion en famille Somba."], IMG["classroom"]),
+    _co(CM_BJ, FBJ, "benin-adja-aplahoue", "Adja", "Aplahoué", 16, 210, "Session 4 semaines", "Français + Adja",
+        "L'adja, langue proche du fon parlée au sud-ouest du Bénin, apprise à travers les marchés et la tradition orale.",
+        ["2h/jour (9h-11h).", "Semaines 1-2 : phonétique, tons et salutations.",
+         "Semaines 3-4 : conversation, sortie pratique au marché d'Aplahoué."], IMG["market_stalls"]),
+
+    # Burkina Faso
+    _co(CM_BF, FBF, "burkina-faso-bissa-garango", "Bissa", "Garango", 18, 220, "Session 3 semaines", "Français + Bissa",
+        "Le bissa, langue du centre-est burkinabé, apprise en immersion dans les villages de la région du Boulgou.",
+        ["3h/jour (9h-12h).", "Semaine 1 : phonétique et salutations.",
+         "Semaine 2 : vocabulaire agricole et vie communautaire.",
+         "Semaine 3 : conversation avec locuteurs natifs."], IMG["students_study"]),
+    _co(CM_BF, FBF, "burkina-faso-gulmancema-fada", "Gulmancéma", "Fada N'Gourma", 16, 220, "Session 3 semaines", "Français + Gulmancéma",
+        "Le gulmancéma, langue des Gourmantché de l'est burkinabé, exploré à travers récits, chants et vie villageoise.",
+        ["3h/jour (9h-12h).", "Semaine 1 : phonétique et salutations.",
+         "Semaine 2 : vocabulaire du quotidien et des cérémonies.",
+         "Semaine 3 : conversation et immersion en famille Gourmantché."], IMG["classroom"]),
+
+    # Niger
+    _co(CM_NE, FNE, "niger-kanuri-diffa", "Kanuri", "Diffa", 18, 220, "Session 3 semaines", "Français + Kanuri",
+        "Le kanuri, langue héritière de l'empire du Bornou, apprise dans la région de Diffa au bord du lac Tchad.",
+        ["3h/jour (9h-12h).", "Semaine 1 : phonétique et salutations.",
+         "Semaine 2 : vocabulaire du lac et du commerce transfrontalier.",
+         "Semaine 3 : conversation avec locuteurs natifs."], IMG["market_stalls"]),
+    _co(CM_NE, FNE, "niger-peul-tillaberi", "Fulfulde (Peul)", "Tillabéri", 16, 210, "Session 4 semaines", "Français + Fulfulde",
+        "Le fulfulde des Peuls du fleuve Niger, appris auprès des éleveurs et pêcheurs de la région de Tillabéri.",
+        ["2h/jour (15h-17h).", "Semaines 1-2 : phonétique, salutations, vocabulaire pastoral.",
+         "Semaines 3-4 : conversation et immersion en famille peule au bord du fleuve."], IMG["water_nature"]),
 ]
