@@ -50,8 +50,12 @@ export default function Navigation() {
     >
       <nav className="max-w-7xl mx-auto px-5 lg:px-10 flex items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-2.5 shrink-0" data-testid="logo-link">
-          <span className="grid place-items-center w-10 h-10 rounded-2xl bg-brand text-white font-display font-extrabold text-lg">W</span>
-          <span className={`font-display font-bold leading-tight text-[15px] ${solid ? "text-ink" : "text-ink"}`}>
+          <img
+            src="https://customer-assets-eiarnc6j.emergentagent.net/job_widad-innovate/artifacts/3cyjn1kk_wiv_logo_v4_fond_sombre-removebg-preview%20%281%29.png"
+            alt="Widad International Volunteers"
+            className="h-11 w-auto"
+          />
+          <span className={`hidden sm:block font-display font-bold leading-tight text-[15px] ${solid ? "text-ink" : "text-ink"}`}>
             Widad<span className="text-brand">.</span>
             <span className="block text-[11px] font-semibold text-muted-foreground -mt-0.5">International Volunteers</span>
           </span>

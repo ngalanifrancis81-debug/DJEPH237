@@ -59,7 +59,7 @@ export default function Home() {
           <span className="vertical-rail font-display font-bold text-white text-sm uppercase">Rechercher un projet</span>
         </div>
 
-        <div className="relative z-10 w-full max-w-3xl mx-auto px-6 text-center pt-20">
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center pt-20">
           <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur px-4 py-1.5 text-sm font-bold text-white border border-white/20">
             <HeartHandshake className="w-4 h-4" /> ONG de volontariat solidaire en Afrique
@@ -74,36 +74,36 @@ export default function Home() {
             Viens participer concrètement à des projets de terrain, ou apprends une langue locale sur place.
           </motion.p>
 
-          {/* Search */}
-          <motion.form onSubmit={onSubmit} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }}
-            className="mt-8 search-glow flex items-center gap-2 bg-white rounded-full border-2 border-transparent p-2 pl-6 max-w-xl mx-auto transition">
+          {/* Pills grid — 3x3 primary selector */}
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }}
+            className="mt-9 mx-auto max-w-2xl grid grid-cols-3 gap-2.5 sm:gap-3 p-3 rounded-3xl bg-white/10 backdrop-blur border border-white/15">
+            {matches.slice(0, 8).map((c) => (
+              <Link key={c.slug} to={`/pays/${c.slug}`} data-testid={`pill-${c.slug}`}
+                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white/95 hover:bg-white text-ink font-bold text-sm sm:text-base px-4 py-3 sm:py-3.5 transition-all hover:-translate-y-0.5 shadow-lg">
+                <span className="text-lg">{c.flag}</span> {c.name}
+              </Link>
+            ))}
+            <Link to="/cours" data-testid="pill-cours"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gold hover:brightness-105 text-ink font-extrabold text-sm sm:text-base px-4 py-3 sm:py-3.5 transition-all hover:-translate-y-0.5 shadow-lg ring-2 ring-white/50">
+              <span className="font-display text-lg">Aa</span> Cours de langue
+            </Link>
+          </motion.div>
+
+          {/* Search — secondary quick filter, below the pills */}
+          <motion.form onSubmit={onSubmit} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.55 }}
+            className="mt-6 search-glow flex items-center gap-2 bg-white rounded-full border-2 border-transparent p-2 pl-5 max-w-md mx-auto transition">
             <Search className="w-5 h-5 text-ink/40 shrink-0" />
             <input
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder="Dans quel pays veux-tu t'engager ?"
               data-testid="search-input"
-              className="flex-1 bg-transparent outline-none text-ink placeholder:text-ink/40 py-2"
+              className="flex-1 bg-transparent outline-none text-ink placeholder:text-ink/40 py-2 min-w-0"
             />
-            <button type="submit" data-testid="search-submit" className="rounded-full bg-brand hover:bg-brand-hover text-white font-bold px-6 py-3 transition-colors">
-              Rechercher
+            <button type="submit" data-testid="search-submit" className="rounded-full bg-brand hover:bg-brand-hover text-white font-bold px-5 py-2.5 transition-colors text-sm">
+              Aller
             </button>
           </motion.form>
-
-          {/* Pills */}
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-7 flex flex-wrap items-center justify-center gap-2.5 max-w-2xl mx-auto">
-            {matches.map((c) => (
-              <Link key={c.slug} to={`/pays/${c.slug}`} data-testid={`pill-${c.slug}`}
-                className="inline-flex items-center gap-2 rounded-full bg-white/95 hover:bg-white text-ink font-bold text-sm px-5 py-2.5 transition-colors hover:-translate-y-0.5">
-                <span>{c.flag}</span> {c.name}
-              </Link>
-            ))}
-            <Link to="/cours" data-testid="pill-cours"
-              className="inline-flex items-center gap-2 rounded-full bg-gold hover:brightness-105 text-ink font-extrabold text-sm px-5 py-2.5 transition hover:-translate-y-0.5 ring-2 ring-white/60">
-              <span className="font-display">Aa</span> Cours de langue
-            </Link>
-          </motion.div>
         </div>
       </section>
 

@@ -15,8 +15,11 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-1">
           <div className="flex items-center gap-2.5">
-            <span className="grid place-items-center w-11 h-11 rounded-2xl bg-brand font-display font-extrabold text-lg">W</span>
-            <span className="font-display font-bold leading-tight">Widad<span className="text-brand">.</span></span>
+            <img
+              src="https://customer-assets-eiarnc6j.emergentagent.net/job_widad-innovate/artifacts/3cyjn1kk_wiv_logo_v4_fond_sombre-removebg-preview%20%281%29.png"
+              alt="Widad International Volunteers"
+              className="h-12 w-auto"
+            />
           </div>
           <p className="mt-5 text-white/60 leading-relaxed text-sm">
             Volontariat, entrepreneuriat solidaire et cours de langues locales à travers l'Afrique.
